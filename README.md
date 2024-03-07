@@ -1,1 +1,1 @@
-# analysis-of-Bloms2016-replication-study
+This repository is part of a large replication project conducted by the Sports Science Replication Centre (https://ssreplicationcentre.com/). It includes the data and analyses for the replication study of "The Effects of Caffeine on Vertical Jump Height and Execution in Collegiate Athletes" by Bloms et al (2016).
