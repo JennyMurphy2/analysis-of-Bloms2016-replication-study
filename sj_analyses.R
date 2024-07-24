@@ -6,6 +6,8 @@ library(MOTE)
 library(tidyverse)
 library(janitor)
 
+set.seed(21)
+
 # Load data
 
 data <- read_csv("rep_data.csv") %>%
