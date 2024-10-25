@@ -107,9 +107,12 @@ normal_long_data$group <- as.factor(normal_long_data$group)
 
 normal_long_data$group <- forcats::fct_relevel(normal_long_data$group, "sj_caff", "sj_pla")
 
-normal_results <- t.test(sj_height ~ group, normal_long_data, 
-                  alternative = "two.sided", paired = TRUE, conf.level = 0.95) %>%
-  tidy()
+#normal_results <- t.test(sj_height ~ group, normal_long_data, 
+#                  alternative = "two.sided", paired = TRUE, conf.level = 0.95) %>%
+#  tidy()
+#normal_results
+
+normal_results <- t.test(normal_paired_data$sj_caff, normal_paired_data$sj_pla, paired = TRUE)
 normal_results
 
 normal_summary_rep <- normal_long_data %>%
@@ -148,13 +151,13 @@ quantile = 1 - (orig_values$ori_pval/2)# for two-tailed
 
 orig_tval <- qt(quantile, df = 24)
 
-orig_dz <- d.dep.t.diff.t(t = orig_tval, n = 25, a = 0.05)
-orig_dz
+ori_dz <- d.dep.t.diff.t(t = orig_tval, n = 25, a = 0.05)
+ori_dz
 
 ## Z-test  --------
 
 rep_test <- compare_smd(
-  smd1 = orig_dz$d,
+  smd1 = ori_dz$d,
   n1 = orig_values$N,
   smd2 = rep_dz$d,
   n2 = summary_rep$count[1],
